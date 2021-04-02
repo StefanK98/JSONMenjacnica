@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.ai.JSONMenjacnica.transakcija;
 
+
 import java.util.Date;
 
 public class Transakcija {
@@ -9,6 +10,18 @@ public class Transakcija {
 	private double konvertovaniIznos;
 	private Date datumTransakcije;
 	
+	public Transakcija() {
+	}
+	
+	public Transakcija(String izvornaValuta, String krajnjaValuta, double pocetniIznos, Date datumTransakcije) {
+		this.izvornaValuta = izvornaValuta;
+		this.krajnjaValuta = krajnjaValuta;
+		this.pocetniIznos = pocetniIznos;
+		this.datumTransakcije = datumTransakcije;
+	}
+
+
+
 	public String getIzvornaValuta() {
 		return izvornaValuta;
 	}
@@ -33,17 +46,19 @@ public class Transakcija {
 	public void setKonvertovaniIznos(double konvertovaniIznos) {
 		this.konvertovaniIznos = konvertovaniIznos;
 	}
+	
 	public Date getDatumTransakcije() {
 		return datumTransakcije;
 	}
+
 	public void setDatumTransakcije(Date datumTransakcije) {
 		this.datumTransakcije = datumTransakcije;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Transakcija [izvornaValuta=" + izvornaValuta + ", krajnjaValuta=" + krajnjaValuta + ", pocetniIznos="
-				+ pocetniIznos + ", konvertovaniIznos=" + konvertovaniIznos + ", datumTransakcije=" + datumTransakcije
+				+ pocetniIznos + ", konvertovaniIznos=" + konvertovaniIznos + ", datumTransakcije=" + datumTransakcije.getTime()
 				+ "]";
 	}
 	

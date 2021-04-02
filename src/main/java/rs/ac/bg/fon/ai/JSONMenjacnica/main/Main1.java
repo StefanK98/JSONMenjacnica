@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Date;
 
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -14,7 +15,6 @@ import com.google.gson.JsonObject;
 import rs.ac.bg.fon.ai.JSONMenjacnica.transakcija.Transakcija;
 
 public class Main1 {
-
 	private static final String BASE_URL = "http://api.currencylayer.com";
 	private static final String API_KEY = "ab1e19a68e41254b4d8c9d89ccb4443d";
 	
@@ -42,7 +42,7 @@ public class Main1 {
 				double kurs = rezultat.get("quotes").getAsJsonObject().get("USDCAD").getAsDouble();
 				transakcija.setKonvertovaniIznos(kurs*transakcija.getPocetniIznos());
 			}
-			
+			System.out.println(transakcija);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
